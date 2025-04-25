@@ -1,0 +1,23 @@
+version: '3.9'
+
+volumes:
+  blynk-server-data:         # Lưu trữ dữ liệu người dùng, projects, tokens, backup
+  blynk-server-logs:         # Lưu log hoạt động của Blynk Server
+
+services:
+  blynk-server:
+    image: kienbui2oo3/blynk-server:latest       # Image đã push lên Docker Hub
+    container_name: blynk-server                 # Đặt tên container dễ quản lý
+
+    command: ["-dataFolder", "/data", "-serverConfig", "/blynk/server.properties"]          # Ghi đè cmd trong Dockerfile
+
+    volumes: 
+      - 'blynk-server-data:/data'                             # Mount volume dữ liệu vào /data
+      - 'blynk-server-logs:/blynk/logs'                       # Mount volume log vào /blynk/logs
+      - './mail.properties:/blynk/mail.properties'            # Bind cấu hình email
+      - './server.properties:/blynk/server.properties'        # Bind cấu hình server
+    ports:
+      - "8080:8080"    # HTTP API & Web dashboard (không bảo mật)
+      - "9443:9443"    # HTTPS (Blynk App + Web Dashboard bảo mật)
+
+    restart: unless-stopped   # Tự động khởi động lại khi lỗi hoặc reboot máy
