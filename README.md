@@ -24,7 +24,7 @@ Cài đặt Docker và Docker Compose
 SSH vào máy chủ và đảm bảo rằng đã cài đặt docker và docker-compose.
 
 Clone repo về máy chủ:
-git clone https://github.com/hortio/docker-blynk.git
+git clone https://github.com/kien2oo3/Blynk-Local-Server.git
 
 Di chuyển vào thư mục dự án:
 cd docker-blynk
