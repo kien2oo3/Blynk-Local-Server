@@ -18,8 +18,7 @@ Lưu ý: Hiện tại chỉ hỗ trợ hệ thống x86, với Raspberry Pi thì
 Máy chủ của bạn cần cài đặt sẵn Docker và Docker Compose (khuyến nghị).
 
 Bạn nên làm theo hướng dẫn chính thức để cài đặt:
-Cài đặt Docker
-Cài đặt Docker Compose
+Cài đặt Docker và Docker Compose
 
 🚀 Quy Trình Khuyến Nghị: Chạy Bằng Docker Compose
 SSH vào máy chủ và đảm bảo rằng đã cài đặt docker và docker-compose.
@@ -48,7 +47,7 @@ Hoàn tất! Server sẽ được tự động cập nhật lên phiên bản m�
 
 ⚡ Chạy Không Cần Docker Compose
 Clone repo về máy chủ:
-git clone https://github.com/hortio/docker-blynk.git
+git clone https://github.com/kien2oo3/Blynk-Local-Server.git
 
 Di chuyển vào thư mục:
 cd docker-blynk
